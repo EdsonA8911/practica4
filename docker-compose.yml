@@ -1,0 +1,27 @@
+# MySQL para desarrollo local (coincide con dashboard-app/config.py por defecto).
+# Uso: desde esta carpeta → docker compose up -d
+# URI esperada: mysql+pymysql://root:@localhost:3306/appdashboard
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: dashboard-app-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: appdashboard
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 40s
+
+volumes:
+  mysql_data:
