@@ -42,17 +42,17 @@ class CategoriaModelView(ModelView):
     label_columns = {
         "nombre": "Nombre",
         "descripcion": "Descripcion",
-        "imagen": "Imagen",
+        "url_imagen": "Imagen",
         "estado": "Estado",
         "creado_en": "Creado en",
         "actualizado_en": "Actualizado en",
     }
-    list_columns = ["nombre", "descripcion", "imagen", "estado", "creado_en", "actualizado_en"]
-    add_columns = ["nombre", "descripcion", "imagen", "estado"]
-    edit_columns = ["nombre", "descripcion", "imagen", "estado"]
-    show_columns = ["nombre", "descripcion", "imagen", "estado", "creado_en", "actualizado_en"]
+    list_columns = ["nombre", "descripcion", "url_imagen", "estado", "creado_en", "actualizado_en"]
+    add_columns = ["nombre", "descripcion", "url_imagen", "estado"]
+    edit_columns = ["nombre", "descripcion", "url_imagen", "estado"]
+    show_columns = ["nombre", "descripcion", "url_imagen", "estado", "creado_en", "actualizado_en"]
     formatters_columns = {
-        "imagen": _fmt_imagen,
+        "url_imagen": _fmt_imagen,
         "creado_en": _fmt_fecha,
         "actualizado_en": _fmt_fecha,
     }
@@ -65,17 +65,17 @@ class ProductoModelView(ModelView):
         "descripcion": "Descripcion",
         "precio": "Precio",
         "categoria": "Categoría",
-        "imagen": "Imagen",
+        "url_imagen": "Imagen",
         "estado": "Estado",
         "creado_en": "Creado en",
         "actualizado_en": "Actualizado en",
     }
-    list_columns = ["nombre", "precio", "categoria", "imagen", "estado", "creado_en", "actualizado_en"]
-    add_columns = ["nombre", "descripcion", "precio", "categoria", "imagen", "estado"]
-    edit_columns = ["nombre", "descripcion", "precio", "categoria", "imagen", "estado"]
-    show_columns = ["nombre", "descripcion", "precio", "imagen", "estado", "creado_en", "actualizado_en"]
+    list_columns = ["nombre", "precio", "categoria", "url_imagen", "estado", "creado_en", "actualizado_en"]
+    add_columns = ["nombre", "descripcion", "precio", "categoria", "url_imagen", "estado"]
+    edit_columns = ["nombre", "descripcion", "precio", "categoria", "url_imagen", "estado"]
+    show_columns = ["nombre", "descripcion", "precio", "url_imagen", "estado", "creado_en", "actualizado_en"]
     formatters_columns = {
-        "imagen": _fmt_imagen,
+        "url_imagen": _fmt_imagen,
         "creado_en": _fmt_fecha,
         "actualizado_en": _fmt_fecha,
     }

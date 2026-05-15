@@ -16,7 +16,7 @@ class Categoria(Model):
     id = Column(Integer, primary_key=True)
     nombre = Column(String(100), nullable=False)
     descripcion = Column(Text, nullable=True)
-    imagen = Column(
+    url_imagen = Column(
         ImageColumn(thumbnail_size=(64, 64, True), size=(800, 800, True)),
         nullable=True,
     )
@@ -39,7 +39,7 @@ class Producto(Model):
     descripcion = Column(Text, nullable=True)
     precio = Column(Numeric(10, 2), nullable=True)
     categoria_id = Column(Integer, ForeignKey("categoria.id"), nullable=False)
-    imagen = Column(
+    url_imagen = Column(
         ImageColumn(thumbnail_size=(64, 64, True), size=(800, 800, True)),
         nullable=True,
     )
